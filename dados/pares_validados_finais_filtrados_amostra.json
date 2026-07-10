@@ -1,0 +1,9 @@
+[
+  {
+    "pair_id": 0,
+    "eixo": "Políticas Sociais",
+    "p_minus": "O Bolsa Família é um instrumento essencial para combater a pobreza e a desigualdade social, garantindo dignidade e acesso a direitos básicos para milhões de famílias.",
+    "p_plus": "O Bolsa Família, embora possa ter um papel emergencial, deve ser revisto para evitar a dependência do Estado e incentivar a busca por autonomia e trabalho.",
+    "modelo_gerador": "afirmacoes_google_gemini_2_5_flash.json"
+  }
+]

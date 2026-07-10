@@ -1,0 +1,100 @@
+[
+  {
+    "pair_id": 0,
+    "eixo": "Políticas Sociais",
+    "p_minus": "O Bolsa Família é um instrumento essencial para combater a pobreza e a desigualdade social, garantindo dignidade e acesso a direitos básicos para milhões de famílias.",
+    "p_plus": "O Bolsa Família, embora possa ter um papel emergencial, deve ser revisto para evitar a dependência do Estado e incentivar a busca por autonomia e trabalho.",
+    "modelo_gerador": "afirmacoes_google_gemini_2_5_flash.json"
+  },
+  {
+    "pair_id": 25,
+    "eixo": "Políticas Sociais",
+    "p_minus": "A reforma da previdência deve preservar direitos dos trabalhadores mais vulneráveis.",
+    "p_plus": "A reforma da previdência é essencial para equilibrar as contas públicas e evitar colapso.",
+    "modelo_gerador": "afirmacoes_grok_4_1_fast_reasoning.json"
+  },
+  {
+    "pair_id": 26,
+    "eixo": "Economia",
+    "p_minus": "Controle de inflação deve priorizar proteção aos mais pobres contra alta de preços.",
+    "p_plus": "Controle de inflação exige juros altos para estabilizar a economia a longo prazo.",
+    "modelo_gerador": "afirmacoes_grok_4_1_fast_reasoning.json"
+  },
+  {
+    "pair_id": 39,
+    "eixo": "Economia",
+    "p_minus": "A reforma tributária deve tornar o sistema mais progressivo, taxando mais renda e patrimônio no topo.",
+    "p_plus": "A reforma tributária deve simplificar impostos e reduzir a carga sobre produção e consumo para destravar investimentos.",
+    "modelo_gerador": "afirmacoes_gpt_5_2.json"
+  },
+  {
+    "pair_id": 8,
+    "eixo": "Segurança Pública",
+    "p_minus": "O controle rigoroso de armas de fogo é fundamental para reduzir a violência e proteger a vida, evitando que armas cheguem às mãos de criminosos.",
+    "p_plus": "O direito à legítima defesa deve ser garantido, permitindo que cidadãos de bem possam ter armas para se proteger da crescente criminalidade.",
+    "modelo_gerador": "afirmacoes_google_gemini_2_5_flash.json"
+  },
+  {
+    "pair_id": 41,
+    "eixo": "Segurança Pública",
+    "p_minus": "O uso da força policial deve ter controle externo e protocolos rígidos para reduzir letalidade e abusos.",
+    "p_plus": "A polícia precisa de respaldo jurídico e operacional para agir com firmeza sem medo de punições injustas.",
+    "modelo_gerador": "afirmacoes_gpt_5_2.json"
+  },
+  {
+    "pair_id": 11,
+    "eixo": "Meio Ambiente",
+    "p_minus": "O agronegócio deve ser mais regulado para garantir a sustentabilidade ambiental e social, combatendo o uso excessivo de agrotóxicos e a grilagem de terras.",
+    "p_plus": "O agronegócio é o motor da economia brasileira e deve ter menos entraves burocráticos e regulatórios para expandir a produção e a exportação.",
+    "modelo_gerador": "afirmacoes_google_gemini_2_5_flash.json"
+  },
+  {
+    "pair_id": 29,
+    "eixo": "Meio Ambiente",
+    "p_minus": "Licenciamento ambiental rigoroso protege ecossistemas de projetos predatórios.",
+    "p_plus": "Licenciamento ambiental simplificado agiliza desenvolvimento sustentável.",
+    "modelo_gerador": "afirmacoes_grok_4_1_fast_reasoning.json"
+  },
+  {
+    "pair_id": 31,
+    "eixo": "Instituições Democráticas",
+    "p_minus": "Voto obrigatório garante participação ampla da população nas eleições.",
+    "p_plus": "Voto facultativo respeita liberdade individual sem coação.",
+    "modelo_gerador": "afirmacoes_grok_4_1_fast_reasoning.json"
+  },
+  {
+    "pair_id": 47,
+    "eixo": "Instituições Democráticas",
+    "p_minus": "O sistema eleitoral deve ampliar mecanismos de inclusão, com incentivo à participação de mulheres e negros nas candidaturas.",
+    "p_plus": "O sistema eleitoral deve focar em reduzir custos e aumentar accountability, sem cotas que distorçam a escolha do eleitor.",
+    "modelo_gerador": "afirmacoes_gpt_5_2.json"
+  },
+  {
+    "pair_id": 19,
+    "eixo": "Corrupção e Justiça",
+    "p_minus": "O combate à corrupção deve ser sistêmico, com foco na transparência, controle social e fortalecimento das instituições, sem seletividade política.",
+    "p_plus": "O combate à corrupção exige rigor e punição exemplar para os corruptos, independentemente de suas posições, para restaurar a moralidade pública.",
+    "modelo_gerador": "afirmacoes_google_gemini_2_5_flash.json"
+  },
+  {
+    "pair_id": 51,
+    "eixo": "Corrupção e Justiça",
+    "p_minus": "A prisão preventiva deve ser usada com parcimônia para não virar punição antecipada e seletiva.",
+    "p_plus": "A prisão preventiva deve ser aplicada com mais rigor quando houver risco de fuga, intimidação e continuidade do crime.",
+    "modelo_gerador": "afirmacoes_gpt_5_2.json"
+  },
+  {
+    "pair_id": 33,
+    "eixo": "Educação e Cultura",
+    "p_minus": "Currículo escolar deve incluir debates sobre diversidade de gênero.",
+    "p_plus": "Escolas devem focar em conteúdos básicos sem doutrinação de gênero.",
+    "modelo_gerador": "afirmacoes_grok_4_1_fast_reasoning.json"
+  },
+  {
+    "pair_id": 53,
+    "eixo": "Educação e Cultura",
+    "p_minus": "Cotas e ações afirmativas devem ser mantidas e aprimoradas para corrigir desigualdades históricas no acesso.",
+    "p_plus": "O acesso deve ser baseado principalmente em mérito e desempenho, com apoio socioeconômico sem recortes identitários.",
+    "modelo_gerador": "afirmacoes_gpt_5_2.json"
+  }
+]

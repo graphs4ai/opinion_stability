@@ -1,0 +1,28 @@
+[workspace]
+authors = ["Anderson Soares <a241149@dac.unicamp.br>"]
+channels = ["conda-forge"]
+name = "opinion_stability"
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+iterative = "python -m experimentos.iterative_experiment"
+iterative-v2 = "python -m experimentos.iterative_experiment_v2"
+iterative-v3 = "python -m experimentos.iterative_experiment_v3"
+
+[dependencies]
+python = "3.12.*"
+hydra-core = ">=1.3.2,<2"
+pandas = ">=2.3.3,<3"
+seaborn = ">=0.13.2,<0.14"
+scipy = ">=1.11.0,<2"
+scikit-posthocs = ">=0.9.0,<0.10"
+time = ">=1.9,<2"
+tqdm = ">=4.67.1,<5"
+ollama-python = ">=0.6.1,<0.7"
+openai = ">=2.8.1,<3"
+python-dotenv = ">=1.2.1,<2"
+google-genai = ">=1.52.0,<2"
+
+[pypi-dependencies]
+xai-sdk = ">=1.4.1, <2"
