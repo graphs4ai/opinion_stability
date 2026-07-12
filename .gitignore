@@ -5,3 +5,9 @@
 /outputs
 /figures
 *.pyc
+paper.pdf
+paper.aux
+paper.fdb_latexmk
+paper.fls
+paper.log
+paper.tex
