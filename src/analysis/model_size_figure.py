@@ -555,12 +555,12 @@ def plot_main_model_size_figure(
         ncol=2,
         frameon=False,
     )
-    fig.suptitle(
-        "Model size and mean absolute first-to-final movement",
-        fontsize=14,
-        fontweight="bold",
-        y=1.02,
-    )
+    # fig.suptitle(
+        # "Model size and mean absolute first-to-final movement",
+        # fontsize=14,
+        # fontweight="bold",
+        # y=1.02,
+    # )
     fig.tight_layout(rect=[0, 0.10, 1, 0.98])
     fig.savefig(png_path, dpi=300, bbox_inches="tight")
     fig.savefig(pdf_path, bbox_inches="tight")

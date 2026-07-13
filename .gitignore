@@ -11,3 +11,4 @@ paper.fdb_latexmk
 paper.fls
 paper.log
 paper.tex
+paper.synctex.gz
