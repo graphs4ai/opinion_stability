@@ -1,0 +1,5 @@
+- MAX_RETRIES=5
+- RETRY_MAX_SECONDS=30
+- ARQUIVO_CACHE=dados/coleta_2026_09/e1/cache.pkl
+- ARQUIVO_SAIDA_RESPOSTAS=dados/coleta_2026_09/e1/respostas_e1.csv
+- ARQUIVO_SAIDA_RESUMOS=dados/coleta_2026_09/e1/resumos_e1.csv

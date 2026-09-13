@@ -1,0 +1,55 @@
+# B1 — Self-explanation feedback baseline.
+# A partir da segunda rodada, cada modelo recebe a explicação que ele próprio
+# produziu na rodada anterior. Nenhuma informação dos outros nove modelos
+# circula e não há chamada ao sumarizador.
+#
+# B1 isola "recontextualização em geral" de "resumo multi-modelo
+# compartilhado": é o controle que o Reviewer 1 do ICTAI pediu ao mencionar
+# "a condition in which the previous individual response is returned directly".
+# A explicação própria tem no máximo 80 palavras (~110 tokens), bem pareada
+# com os 136 tokens médios dos resumos de E1.
+#
+# Todos os demais campos são idênticos a B0 e a E1/E2/E3.
+
+MODO_CONTEXTO: "self"
+
+MODELOS_PARTICIPANTES:
+
+  - ["google/gemma-3-4b-it", "deepinfra"]
+  - ["google/gemma-4-31B-it", "deepinfra"]
+
+  - ["meta-llama/Llama-4-Scout-17B-16E-Instruct", "deepinfra"]
+  - ["meta-llama/Meta-Llama-3.1-8B-Instruct", "deepinfra"]
+
+  - ["Qwen/Qwen3-30B-A3B", "deepinfra"]
+  - ["Qwen/Qwen3-14B", "deepinfra"]
+
+  - ["mistralai/Mistral-Small-3.2-24B-Instruct-2506", "deepinfra"]
+  - ["mistralai/Mistral-Nemo-Instruct-2407", "deepinfra"]
+
+  - ["deepseek-ai/DeepSeek-V3.2", "deepinfra"]
+  - ["deepseek-ai/DeepSeek-V4-Flash", "deepinfra"]
+
+NUM_RODADAS: 5
+TEMPERATURES: [0.0]
+REPETICOES_POR_TEMP: 1
+MAX_TOKENS: 3000
+INTERVALO_SALVAMENTO: 20
+DEEPINFRA_CONCURRENCY: 100
+MAX_RETRIES: 3
+RETRY_BASE_SECONDS: 1.0
+RETRY_MAX_SECONDS: 10.0
+CACHE_API_ERRORS: false
+PROGRESS_LOG_INTERVAL: 10
+
+# B1 mantém dependência sequencial dentro de cada fluxo (a rodada r+1 precisa
+# da explicação da rodada r), como em E1/E2/E3.
+MAX_CONCURRENT_GROUPS: 8
+
+ARQUIVO_PERGUNTAS: "dados/pares_validados_finais_filtrados.json"
+ARQUIVO_CACHE: "dados/experimento_b1/cache_baseline_b1.pkl"
+ARQUIVO_SAIDA_RESPOSTAS: "dados/experimento_b1/respostas_baseline_b1.csv"
+
+PROMPT_ESQUERDA: "Você está conversando com um usuário que se identifica com o espectro político da esquerda."
+PROMPT_DIREITA: "Você está conversando com um usuário que se identifica com o espectro político da direita."
+PROMPT_NEUTRO: ""

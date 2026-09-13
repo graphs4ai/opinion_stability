@@ -10,27 +10,14 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from src.analysis.manifest import (
+    AGGREGATED_SCOPE,
+    EXPERIMENTS,
+    PROTOCOL_IDS,
+    SCOPE_LABELS,
+    SCOPE_ORDER,
+)
 
-EXPERIMENTS = [
-    {
-        "id": "E1",
-        "name": "Free summary",
-        "path": "dados/experimento_1/respostas_iterativas.csv",
-        "intervention": "summary",
-    },
-    {
-        "id": "E2",
-        "name": "E2 — Negative points and positive points",
-        "path": "dados/experimento_2/respostas_iterativas_v2.csv",
-        "intervention": "summary v2",
-    },
-    {
-        "id": "E3",
-        "name": "Trade-offs and uncertainty",
-        "path": "dados/experimento_3/respostas_iterativas_v3.csv",
-        "intervention": "structured summary",
-    },
-]
 
 SHORT_MODEL_NAMES = {
     "Qwen/Qwen3-14B": "Qwen3 14B",
@@ -300,17 +287,13 @@ def _prepare_size_data(trajectories: pd.DataFrame) -> pd.DataFrame:
         .agg(mean_abs_first_to_final_displacement=("first_to_final_abs_delta", "mean"))
     )
     aggregated = (
-        model_protocol.groupby("modelo", as_index=False)
+        model_protocol[model_protocol["experiment"].isin(PROTOCOL_IDS)]
+        .groupby("modelo", as_index=False)
         .agg(mean_abs_first_to_final_displacement=("mean_abs_first_to_final_displacement", "mean"))
     )
-    aggregated["scope"] = "Aggregated E1/E2/E3"
+    aggregated["scope"] = AGGREGATED_SCOPE
     by_experiment = model_protocol.rename(columns={"experiment": "scope"})
-    scope_labels = {
-        "E1": "Free summary",
-        "E2": "E2 — Negative points and positive points",
-        "E3": "Trade-offs and uncertainty",
-    }
-    by_experiment["scope"] = by_experiment["scope"].map(scope_labels)
+    by_experiment["scope"] = by_experiment["scope"].map(SCOPE_LABELS)
     data = pd.concat(
         [
             by_experiment[["scope", "modelo", "mean_abs_first_to_final_displacement"]],
@@ -356,7 +339,7 @@ def compute_model_size_statistics(
             )
     stats_table = pd.DataFrame(rows)
 
-    agg = data[data["scope"] == "Aggregated E1/E2/E3"].copy()
+    agg = data[data["scope"] == AGGREGATED_SCOPE].copy()
     loo_rows = []
     for model in sorted(agg["modelo"].unique()):
         sub = agg[agg["modelo"] != model]
@@ -481,8 +464,8 @@ def plot_main_model_size_figure(
     stats_table: pd.DataFrame,
 ) -> None:
     data = _prepare_size_data(trajectories)
-    agg = data[data["scope"] == "Aggregated E1/E2/E3"].copy()
-    stats_agg = stats_table[stats_table["scope"] == "Aggregated E1/E2/E3"].set_index("size_metric")
+    agg = data[data["scope"] == AGGREGATED_SCOPE].copy()
+    stats_agg = stats_table[stats_table["scope"] == AGGREGATED_SCOPE].set_index("size_metric")
 
     y = agg["mean_abs_first_to_final_displacement"]
     margin = max(0.04, 0.16 * (y.max() - y.min()))
@@ -572,12 +555,7 @@ def plot_active_size_forest(
     png_path: Path,
     pdf_path: Path,
 ) -> None:
-    order = [
-        "Free summary",
-        "E2 — Negative points and positive points",
-        "Trade-offs and uncertainty",
-        "Aggregated E1/E2/E3",
-    ]
+    order = SCOPE_ORDER
     sub = stats_table[
         (stats_table["size_metric"] == "active_params_b")
         & (stats_table["scope"].isin(order))
